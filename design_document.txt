@@ -1,0 +1,52 @@
+List of classes with their interfaces: 
+	1. Student
+		- RollNumber r 
+		- string hostel
+		- Faculty facad
+		- float cgpa
+		- int type
+		- Student(RollNumber r, string hostel, Faculty facad, float cgpa)
+			- called by BTech()
+		- void setType (int type) 
+			- called by BTech()
+		- string getHostel()
+		- Faculty getFacad()
+		- void changeHostel(string)
+	2. BTech : inherits from Student
+		- BTech(RollNumber r, string hostel, Faculty facad, float cgpa)
+			- calls Student(), Student.setType()
+
+		- Faculty getBTPGuide()
+		- void setBTPGuide(Faculty)
+			- calls Faculty.addBTP()
+	3. DualDegree : inherits from Student
+		- DualDegree(RollNumber r, string hostel, Faculty facad, float cgpa)
+		- Faculty getDDPGuide()
+		- Faculty getTASupervisor()
+		- void setDDPGuide(Faculty);
+			- calls Faculty.addDDP()
+		- voidsetTASupervisor(Faculty);
+			- calls Faculty.addTA()
+	4. RollNumber
+		- string rno;
+		- RollNumber(string rno)
+	5. Faculty
+		- vector<Students> BTPStudents
+		- vector<Students> DDPStudents
+		- vector<Students> TAs
+		- Faculty(string name, int type)
+		- void addBTP(Student)
+			- called by BTech.setBTPGuide()
+		- void addDDP(Student)
+		- void addTA(Student)
+	6. IITM
+		- IITM(vector<Student> students, vector<Faculty> faculties, vector<string> hostels)
+		- void checkConstraints()
+		- float sameGuideAndSupervisorPercentage()
+		- void displayRollnoSortedStudents()
+		- void displayGuideSortedStudents()
+		- void displayHostelSortedStudents()
+		- void printDDGivenFacultyAndHostel(Faculty faculty, string hostel)
+		- Faculty findMostDiverseFaculty()
+
+
